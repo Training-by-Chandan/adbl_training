@@ -10,3 +10,6 @@
 9. [git checkout](https://git-scm.com/book/en/v2/Getting-Started-Git-Basics#Checking-out-a-Specific-Commit) : Check out a specific commit   (git checkout commit-id)
 10. [git branch](https://git-scm.com/book/en/v2/Getting-Started-Git-Basics#Creating-and-Switching-Branches) : Create and switch branches   (git branch)
 11. [git merge](https://git-scm.com/book/en/v2/Getting-Started-Git-Basics#Merging-Branches) : Merge branches   (git merge branch-name)
+
+
+# Remote Git Commands 
