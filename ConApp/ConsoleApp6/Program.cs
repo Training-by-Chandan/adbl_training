@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace ABC.App
 {
@@ -6,10 +7,234 @@ namespace ABC.App
     {
         private static void Main()
         {
-            //Basic();
-            //DataTypes();
-            //Casting();
-            CastingExample();
+            var res = "y";
+            do
+            {
+                //Basic();
+                //DataTypes();
+                //Casting();
+                //CastingExample();
+                //ConditionExample1();
+                //ConditionExample3();
+                //ConditionExample2();
+                //ConditionExample4();
+                //LoopingV2();
+                Concatenation();
+
+                Console.WriteLine("Do you want to continue more?(y/n)");
+                res = Console.ReadLine();
+            } while (res == "y");
+        }
+
+        private static void Concatenation()
+        {
+            //concatenation
+            string str1 = "Chandan";
+            string str2 = "Bhagat";
+            string result = str1 + " " + str2;
+            Console.WriteLine(result);
+
+            //string formatting
+            string templ = "{0} {1}";
+            string result2 = string.Format(templ, str1, str2);
+            string result3 = string.Format("{0} 1", str1, str2);
+
+            Console.WriteLine(result2);
+            Console.WriteLine(result3);
+
+            //string interpolation
+            var result4 = $"{str1} asdfasdf {str2}";
+
+            //string builder
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("Dear Sir");
+            sb.AppendLine("Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque odit id totam consectetur hic velit minima veritatis doloremque magnam! Quia dolor quis eum, ut dicta perspiciatis sapiente illum laborum aliquid.");
+            sb.AppendLine("Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque odit id totam consectetur hic velit minima veritatis doloremque magnam! Quia dolor quis eum, ut dicta perspiciatis sapiente illum laborum aliquid.");
+            sb.AppendLine("Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque odit id totam consectetur hic velit minima veritatis doloremque magnam! Quia dolor quis eum, ut dicta perspiciatis sapiente illum laborum aliquid.");
+
+            Console.WriteLine(sb.ToString());
+        }
+
+        private static void LoopingV2()
+        {
+            Console.WriteLine("Enter the number");
+            var num = Convert.ToInt32(Console.ReadLine());
+            for (int i = 1; i <= 10; i++)
+            {
+                Console.WriteLine(num + " x " + i + " = " + num * i);
+            }
+        }
+
+        private static void Looping()
+        {
+            //for unknown parameters
+            //while
+            //do --- while
+
+            //for known parameters
+            //for
+            //foreach
+        }
+
+        private static void ConditionExample4()
+        {
+            Console.WriteLine("Enter the number");
+            var num = Convert.ToInt32(Console.ReadLine());
+            var remainder = num % 2;
+            string resut = "";
+            if (remainder == 0)
+            {
+                resut = "It is a even number";
+            }
+            else
+            {
+                resut = "It is a odd number";
+            }
+            //ternar operator
+            //syntax :
+            // (condition) ? <true statement> : <false statement>
+            resut = (remainder == 0) ? "It is a even number" : "It is a odd number";
+            Console.WriteLine(resut); ;
+        }
+
+        private static void ConditionExample3()
+        {
+            Console.WriteLine("Enter the number");
+            var num = Convert.ToInt32(Console.ReadLine());
+
+            switch (num)
+            {
+                case 1:
+                    Console.WriteLine("Sunday");
+                    break;
+
+                case 2:
+                    Console.WriteLine("Monday");
+                    break;
+
+                case 3:
+                    Console.WriteLine("Tuesday");
+                    break;
+
+                case 4:
+                    Console.WriteLine("Wednesday");
+                    break;
+
+                case 5:
+                    Console.WriteLine("Thursday");
+                    break;
+
+                case 6:
+                    Console.WriteLine("Friday");
+                    break;
+
+                case 7:
+                    Console.WriteLine("Saturday");
+                    break;
+
+                default:
+                    Console.WriteLine("Not a valid day");
+                    break;
+            }
+
+            switch (num)
+            {
+                case 1:
+                case 7:
+                    Console.WriteLine("Its a weekend");
+                    break;
+
+                case 2:
+                case 3:
+                case 4:
+                case 5:
+                case 6:
+                    Console.WriteLine("Its a weekdays");
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
+        private static void ConditionExample2()
+        {
+            Console.WriteLine("Enter the number");
+            var num = Convert.ToInt32(Console.ReadLine());
+
+            if (num == 1)
+            {
+                Console.WriteLine("Sunday");
+            }
+            else if (num == 2)
+            {
+                Console.WriteLine("Monday");
+            }
+            else if (num == 3)
+            {
+                Console.WriteLine("Tuesday");
+            }
+            else if (num == 4)
+            {
+                Console.WriteLine("Wednesday");
+            }
+            else if (num == 5)
+            {
+                Console.WriteLine("Thursday");
+            }
+            else if (num == 6)
+            {
+                Console.WriteLine("Friday");
+            }
+            else if (num == 7)
+            {
+                Console.WriteLine("Saturday");
+            }
+            else
+            {
+                Console.WriteLine("Not a valid day");
+            }
+
+            if (num == 1)
+            {
+                Console.WriteLine("Sunday");
+            }
+            else if (num == 2)
+                Console.WriteLine("Monday");
+            else if (num == 3) Console.WriteLine("Tuesday");
+            else if (num == 4) Console.WriteLine("Wednesday");
+            else if (num == 5) Console.WriteLine("Thursday");
+            else if (num == 6) Console.WriteLine("Friday");
+            else if (num == 7) Console.WriteLine("Saturday");
+            else Console.WriteLine("Not a valid day");
+
+            if (num == 1 || num == 7)
+            {
+                Console.WriteLine("Its a weekend");
+            }
+            else if (num == 2 || num == 3 || num == 4 || num == 5 || num == 6)
+            {
+                Console.WriteLine("Its a weekdays");
+            }
+            else
+            {
+                Console.WriteLine("not a valid day");
+            }
+        }
+
+        private static void ConditionExample1()
+        {
+            Console.WriteLine("Enter the number");
+            var num = Convert.ToInt32(Console.ReadLine());
+            var remainder = num % 2;
+            if (remainder == 0)
+            {
+                Console.WriteLine("It is a even number");
+            }
+            else
+            {
+                Console.WriteLine("It is a odd number");
+            }
         }
 
         private static void CastingExample()
