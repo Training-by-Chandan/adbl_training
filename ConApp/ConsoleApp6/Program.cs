@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsoleApp6;
+using System;
 using System.Text;
 
 namespace ABC.App
@@ -20,11 +21,29 @@ namespace ABC.App
                 //ConditionExample4();
                 //LoopingV2();
                 //Concatenation();
-                ArrayAndLoopingExample();
+                //ArrayAndLoopingExample();
+                ClassAndObjectsExample();
 
                 Console.WriteLine("Do you want to continue more?(y/n)");
                 res = Console.ReadLine();
             } while (res == "y");
+        }
+
+        private static void ClassAndObjectsExample()
+        {
+            int i = 10;
+
+            HumanBeing chandan = new HumanBeing();
+            HumanBeing shanti = new HumanBeing("Shanti");
+            HumanBeing amin = new HumanBeing("Amin", "Ktm");
+            HumanBeing h1 = new HumanBeing(10);
+
+            Console.WriteLine(chandan.Age);
+            Console.WriteLine(shanti.Name);
+            Console.WriteLine(amin.Name);
+            Console.WriteLine(h1.Name);
+
+            Motorbike chandanbike = new Motorbike();
         }
 
         private static void ArrayAndLoopingExample()
