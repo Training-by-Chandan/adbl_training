@@ -19,11 +19,27 @@ namespace ABC.App
                 //ConditionExample2();
                 //ConditionExample4();
                 //LoopingV2();
-                Concatenation();
+                //Concatenation();
+                ArrayAndLoopingExample();
 
                 Console.WriteLine("Do you want to continue more?(y/n)");
                 res = Console.ReadLine();
             } while (res == "y");
+        }
+
+        private static void ArrayAndLoopingExample()
+        {
+            int[] intArr = new int[5];
+            //index starts from 0
+            for (int i = 0; i < intArr.Length; i++)
+            {
+                intArr[i] = i + 1;
+            }
+
+            foreach (int item in intArr)
+            {
+                Console.WriteLine(item);
+            }
         }
 
         private static void Concatenation()
