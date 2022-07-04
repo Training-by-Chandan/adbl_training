@@ -31,19 +31,41 @@ namespace ABC.App
 
         private static void ClassAndObjectsExample()
         {
-            int i = 10;
+            Employee shanti = new Employee("shanti", "rijal");
+            Employee shrijana = new Employee("shrijana", "paudel");
 
-            HumanBeing chandan = new HumanBeing();
-            HumanBeing shanti = new HumanBeing("Shanti");
-            HumanBeing amin = new HumanBeing("Amin", "Ktm");
-            HumanBeing h1 = new HumanBeing(10);
+            Console.WriteLine(shanti.Id);
+            Console.WriteLine(shanti.FullName);
+            Console.WriteLine(shanti.Intials);
+            //Console.WriteLine(shanti.Email);
 
-            Console.WriteLine(chandan.Age);
-            Console.WriteLine(shanti.Name);
-            Console.WriteLine(amin.Name);
-            Console.WriteLine(h1.Name);
+            //shanti.Id = Random.Shared.Next();
+            //shanti.Name = "Shanti Rijal";
 
-            Motorbike chandanbike = new Motorbike();
+            Console.WriteLine(shrijana.Id);
+            Console.WriteLine(shrijana.FullName);
+            Console.WriteLine(shrijana.Intials);
+
+            //shrijana.Id = Random.Shared.Next();
+            //shrijana.Name = "Shrijana Paudel";
+            int i = 12;
+
+            //HumanBeing chandan = new HumanBeing();
+            //HumanBeing shanti = new HumanBeing();
+            //HumanBeing amin = new HumanBeing();
+            //HumanBeing h1 = new HumanBeing();
+            //chandan.Name = "Chandan Bhagat";
+            //chandan.Profession = "Software Engineer";
+
+            //shanti.Name = "Shanti Rijal";
+            //shanti.Profession = "Banker";
+
+            //Console.WriteLine(chandan.Age);
+            //Console.WriteLine(shanti.Name);
+            //Console.WriteLine(amin.Name);
+            //Console.WriteLine(h1.Name);
+
+            //Motorbike chandanbike = new Motorbike();
         }
 
         private static void ArrayAndLoopingExample()
