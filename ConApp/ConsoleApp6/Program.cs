@@ -22,11 +22,58 @@ namespace ABC.App
                 //LoopingV2();
                 //Concatenation();
                 //ArrayAndLoopingExample();
-                ClassAndObjectsExample();
+                //ClassAndObjectsExample();
+                //PropertiesExample();
+                PropertiesExampleV2();
 
                 Console.WriteLine("Do you want to continue more?(y/n)");
                 res = Console.ReadLine();
             } while (res == "y");
+        }
+
+        private static void PropertiesExampleV2()
+        {
+            StudentInfo si = new StudentInfo();
+            si.Math = 70;
+            si.Science = 80;
+            Console.WriteLine($"Science = {si.Science}");
+            Console.WriteLine($"Math = {si.Math}");
+            Console.WriteLine("-------------------------");
+            Console.WriteLine($"Total = {si.Total}");
+            Console.WriteLine($"Percentage = {si.Percentage}");
+            Console.WriteLine($"Division = {si.Division}");
+            Console.WriteLine();
+            Console.WriteLine();
+
+            si.Math = 60;
+            si.Science = 40;
+            Console.WriteLine($"Science = {si.Science}");
+            Console.WriteLine($"Math = {si.Math}");
+            Console.WriteLine("-------------------------");
+            Console.WriteLine($"Total = {si.Total}");
+            Console.WriteLine($"Percentage = {si.Percentage}");
+            Console.WriteLine($"Division = {si.Division}");
+            Console.WriteLine();
+            Console.WriteLine();
+
+            si.Add(10);
+        }
+
+        private static void PropertiesExample()
+        {
+            StudentInfo si = new StudentInfo();
+            si.Math = 109;
+            Console.WriteLine("Assigning Math = 109");
+            Console.WriteLine($"Value of Math is {si.Math}");
+            Console.WriteLine();
+            si.Math = -109;
+            Console.WriteLine("Assigning Math = -109");
+            Console.WriteLine($"Value of Math is {si.Math}");
+            Console.WriteLine();
+            si.Math = 19;
+            Console.WriteLine("Assigning Math = 19");
+            Console.WriteLine($"Value of Math is {si.Math}");
+            Console.WriteLine();
         }
 
         private static void ClassAndObjectsExample()

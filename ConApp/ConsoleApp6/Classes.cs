@@ -124,4 +124,110 @@ namespace ConsoleApp6
     //    public string Name { get; set; }
     //    public string Email { get; set; }
     //}
+
+    public class StudentInfo
+    {
+        //property
+        //public float MathMarks { get; set; }
+
+        //full property
+        private float _math;
+        public float Math
+        {
+            get { return _math; }
+            set
+            {
+                if (value > 100)
+                {
+                    _math = 100;
+                }
+                else if (value < 0)
+                {
+                    _math = 0;
+                }
+                else
+                {
+                    _math = value;
+                }
+            }
+            
+        }
+
+        private float _science;
+        public float Science
+        {
+            get 
+            {
+                return _science; 
+            }
+            set
+            {
+                if (value>100)
+                {
+                    _science = 100;
+                }
+                else if (value<0)
+                {
+                    _science = 0;
+                }
+                else
+                {
+                    _science = value;
+                }
+            }
+        }
+
+        //readonly property : because it only has get 
+        public float Total
+        {
+            get { return Science + Math; }
+        }
+
+        public float Percentage
+        {
+            get { return Total / 2; }
+        }
+        public string Division
+        {
+            get
+            {
+                if (Percentage>=80)
+                {
+                    return "Distinction";
+                }
+                else if (Percentage>=60)
+                {
+                    return "First Division";
+                }
+                else if (Percentage >= 45)
+                {
+                    return "Second Division";
+                }
+                else if (Percentage >= 32)
+                {
+                    return "Third Division";
+                }
+                else
+                {
+                    return "Failed";
+                }
+            }
+        }
+
+        //functions
+        //signatue : float ()
+        public float TotalMarks()
+        {
+            return Science + Math;
+        }
+
+        //signatue void (int,int)
+        public void Add(int a, int b)
+        {
+            //return; : return is also used when we need the function to break the execution
+            int result = a + b;
+            
+            Console.WriteLine($"result = {result}");
+        }
+    }
 }
