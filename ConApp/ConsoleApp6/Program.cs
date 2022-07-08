@@ -24,11 +24,40 @@ namespace ABC.App
                 //ArrayAndLoopingExample();
                 //ClassAndObjectsExample();
                 //PropertiesExample();
-                PropertiesExampleV2();
+                //PropertiesExampleV2();
+                FunctionExample();
 
                 Console.WriteLine("Do you want to continue more?(y/n)");
                 res = Console.ReadLine();
             } while (res == "y");
+        }
+
+        private static void FunctionExample()
+        {
+            Maths m = new Maths();
+            var res1 = m.Add(10);
+            m.Add(10, 12);
+            m.Add(10, 12);
+            m.Add(10, 12);
+            m.Add(10, 12);
+
+            m.Add(12, 13f);
+            m.FunctionOne(1, "Chandan", 12);
+            m.FunctionOne("Chandan", 12, 15);
+
+            m.FunctionTwo("abc", 12, 15); //normal
+            //advance cases:
+            m.FunctionTwo(b: "", a: 12, c: 15);
+            m.FunctionTwo(c: 15, b: "", a: 12);
+
+            m = new Maths();
+            int a = 12;
+            int b = 13;
+            //pass by value
+            m.PassByValue(a, b);
+            m.PassByReference(ref a, ref b);
+            int result = 0;
+            m.PassbyOut(a, b, out result);
         }
 
         private static void PropertiesExampleV2()
@@ -56,7 +85,7 @@ namespace ABC.App
             Console.WriteLine();
             Console.WriteLine();
 
-            si.Add(10);
+            //si.Add(10);
         }
 
         private static void PropertiesExample()
@@ -98,10 +127,11 @@ namespace ABC.App
             int i = 12;
 
             //HumanBeing chandan = new HumanBeing();
-            //HumanBeing shanti = new HumanBeing();
+            //HumanBeing sh = new HumanBeing();
             //HumanBeing amin = new HumanBeing();
             //HumanBeing h1 = new HumanBeing();
             //chandan.Name = "Chandan Bhagat";
+            //sh.Name = "Shanti Rijal";
             //chandan.Profession = "Software Engineer";
 
             //shanti.Name = "Shanti Rijal";

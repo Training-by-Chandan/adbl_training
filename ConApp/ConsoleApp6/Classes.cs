@@ -132,6 +132,7 @@ namespace ConsoleApp6
 
         //full property
         private float _math;
+
         public float Math
         {
             get { return _math; }
@@ -150,23 +151,23 @@ namespace ConsoleApp6
                     _math = value;
                 }
             }
-            
         }
 
         private float _science;
+
         public float Science
         {
-            get 
+            get
             {
-                return _science; 
+                return _science;
             }
             set
             {
-                if (value>100)
+                if (value > 100)
                 {
                     _science = 100;
                 }
-                else if (value<0)
+                else if (value < 0)
                 {
                     _science = 0;
                 }
@@ -177,7 +178,7 @@ namespace ConsoleApp6
             }
         }
 
-        //readonly property : because it only has get 
+        //readonly property : because it only has get
         public float Total
         {
             get { return Science + Math; }
@@ -187,15 +188,16 @@ namespace ConsoleApp6
         {
             get { return Total / 2; }
         }
+
         public string Division
         {
             get
             {
-                if (Percentage>=80)
+                if (Percentage >= 80)
                 {
                     return "Distinction";
                 }
-                else if (Percentage>=60)
+                else if (Percentage >= 60)
                 {
                     return "First Division";
                 }
@@ -226,8 +228,83 @@ namespace ConsoleApp6
         {
             //return; : return is also used when we need the function to break the execution
             int result = a + b;
-            
+
             Console.WriteLine($"result = {result}");
+        }
+
+        //functon  : a set procedure to do a task with input and/or output(based on return type)
+
+        public void Add()
+        {
+            //we will do something
+        }
+    }
+
+    public class Maths
+    {
+        public Maths()
+        {
+            //only in rare cases, normally we dont do it
+            //return;
+        }
+
+        //function overloading : Name of the function is same but signature  should be different
+        public int Add(int a)
+        {
+            return a + 1;
+        }
+
+        //public int Add(int a, int b) => a + b;
+        //public int Add(int a, int b) { return a + b; }
+        public int Add(int a, int b)
+        {
+            //do something
+            return a + b;
+        }
+
+        public int Add(int x, float y)
+        {
+            //something
+            return x + (int)y;
+        }
+
+        public int Subtract(int a, int b)
+        {
+            return a - b;
+        }
+
+        public void FunctionOne(int a, string b, int c)
+        {
+            //do something
+            return;
+        }
+
+        public void FunctionOne(string b, int a, int c)
+        {
+            //do something
+        }
+
+        public void FunctionTwo(string b, int a, int c)
+        {
+            //do something
+        }
+
+        public void PassByValue(int x, int y)
+        {
+            x++;
+            y++;
+        }
+
+        public void PassByReference(ref int a, ref int b)
+        {
+            a++;
+            b++;
+            a = a + b;
+        }
+
+        public void PassbyOut(int a, int b, out int res)
+        {
+            res = a + b;
         }
     }
 }
