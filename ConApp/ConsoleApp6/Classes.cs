@@ -306,5 +306,11 @@ namespace ConsoleApp6
         {
             res = a + b;
         }
+
+        public string FnThree(int a, int b, out int res)
+        {
+            res = a + b;
+            return "Everything is good";
+        }
     }
 }

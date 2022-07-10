@@ -58,6 +58,12 @@ namespace ABC.App
             m.PassByReference(ref a, ref b);
             int result = 0;
             m.PassbyOut(a, b, out result);
+
+            //out
+            string str = "10";
+            int i = Convert.ToInt32(str);
+            i = int.Parse(str);
+            int.TryParse(str, out i);
         }
 
         private static void PropertiesExampleV2()
