@@ -1,0 +1,81 @@
+﻿> int[] intArr = new int[] { 10, 20, 30, 45, 21 };
+
+> intArr
+int[5] { 10, 20, 30, 45, 21 }
+
+> intArr.GetLength()
+(1,8): error CS7036: There is no argument given that corresponds to the required formal parameter 'dimension' of 'Array.GetLength(int)'
+
+> intArr.GetLength(1)
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+  + System.Array.GetLength(int)
+
+> intArr.GetLength(0)
+5
+
+> intArr.Length
+5
+
+> intArr
+int[5] { 10, 20, 30, 45, 21 }
+
+> Array.Sort(intArr);
+
+> intArr
+int[5] { 10, 20, 21, 30, 45 }
+
+> Array.Reverse(intArr)
+
+> intArr
+int[5] { 45, 30, 21, 20, 10 }
+
+> Array.Resize(ref intArr,10)
+
+> intArr
+int[10] { 45, 30, 21, 20, 10, 0, 0, 0, 0, 0 }
+
+> Array.Resize(ref intArr, 2)
+
+> intArr
+int[2] { 45, 30 }
+
+> Array.Exists(45)
+(1,7): error CS7036: There is no argument given that corresponds to the required formal parameter 'match' of 'Array.Exists<T>(T[], Predicate<T>)'
+
+> Array.Exists(intArr, 45)
+(1,22): error CS1503: Argument 2: cannot convert from 'int' to 'System.Predicate<int>'
+
+> Array.Exists(intArr, p => p == 45);
+
+> Array.Exists(intArr, p => p == 45)
+true
+
+> Array.Exists(intArr, p => p == 50)
+false
+
+> Array.Clear(intArr,0, intArr.Length)
+
+> intArr
+int[2] { 0, 0 }
+
+> intArr[0] = 30;
+
+> intArr[1] = 45;
+
+> Array.IndexOf(intArr, 45);
+
+> Array.IndexOf(intArr, 45)
+1
+
+> Array.IndexOf(intArr, 50)
+-1
+
+> intArr
+int[2] { 30, 45 }
+
+> Array.Resize(ref intArr,20)
+
+> intArr
+int[20] { 30, 45, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }
+
+> 
