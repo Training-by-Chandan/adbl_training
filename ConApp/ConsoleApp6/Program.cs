@@ -25,11 +25,43 @@ namespace ABC.App
                 //ClassAndObjectsExample();
                 //PropertiesExample();
                 //PropertiesExampleV2();
-                FunctionExample();
+                //FunctionExample();
+                //StaticAndNonStaticExample();
+                ArrayExample();
 
                 Console.WriteLine("Do you want to continue more?(y/n)");
                 res = Console.ReadLine();
             } while (res == "y");
+        }
+
+        private static void ArrayExample()
+        {
+            int[] i = new int[10];
+            i[0] = 10;
+            i[4] = 4;
+            i[9] = 25;
+
+            int[] intArr = new int[] { 10, 20, 30, 45, 21 };
+        }
+
+        private static void StaticAndNonStaticExample()
+        {
+            // StaticClass sc = new StaticClass(); // We cannot create the objects on static class
+            StaticClass.i = 10;
+            StaticClass.number = 20;
+            StaticClass.FunctionOne();
+
+            NonStaticClass nsc = new NonStaticClass();
+            NonStaticClass nsc1 = new NonStaticClass();
+            NonStaticClass nsc2 = new NonStaticClass();
+            NonStaticClass nsc3 = new NonStaticClass();
+
+            nsc.FunctionOne();
+            nsc1.FunctionOne();
+            nsc2.FunctionOne();
+            nsc3.FunctionOne();
+
+            NonStaticClass.iStatic = 20;
         }
 
         private static void FunctionExample()
