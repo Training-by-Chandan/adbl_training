@@ -27,11 +27,39 @@ namespace ABC.App
                 //PropertiesExampleV2();
                 //FunctionExample();
                 //StaticAndNonStaticExample();
-                ArrayExample();
+                //ArrayExample();
+                InheritanceExample();
 
                 Console.WriteLine("Do you want to continue more?(y/n)");
                 res = Console.ReadLine();
             } while (res == "y");
+        }
+
+        private static void InheritanceExample()
+        {
+            LivingThings l1 = new LivingThings();
+            Animal a1 = new Animal();
+            Plant p1 = new Plant();
+
+            l1.Eat();
+            a1.Eat();
+            p1.Eat();
+
+            //Plant.PrivateClass pc = new Plant.PrivateClass();
+
+            //l1.I = 20;
+            //l1.Name = "";
+            //l1.PublicFunction();
+            ////l1.FunctionOne();
+
+            //a1.I = 20;
+            //a1.Name = "";
+            //a1.PublicFunction();
+            //a1.FunctionOne();
+
+            //p1.I = 30;
+            //p1.Name = "";
+            //p1.PublicFunction();
         }
 
         private static void ArrayExample()
