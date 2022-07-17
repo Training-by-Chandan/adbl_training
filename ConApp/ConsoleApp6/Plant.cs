@@ -1,7 +1,11 @@
 ﻿namespace ConsoleApp6
 {
-    public class Plant : LivingThings
+    public class Plant : LivingThings, IArea
     {
+        public void Area()
+        {
+        }
+
         public class PrivateClass
         {
         }

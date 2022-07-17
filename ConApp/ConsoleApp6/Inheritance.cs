@@ -21,10 +21,19 @@
             System.Console.WriteLine("We are protected members");
         }
 
-        public void Eat()
+        public virtual void Eat()
         {
             //PrivateFunction();
             System.Console.WriteLine("All living things eat");
         }
+
+        //types
+        //1. Single Inheritence
+        //2. Multiple Inheritence (by the help of interface)
+        //3. Multi-Level Inheritence
+        //4. Hierarchial Inheritence
+        //5. Hybrid Inheritence
+
+        //polymorphism : One function with many forms
     }
 }

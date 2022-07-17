@@ -37,9 +37,10 @@ namespace ABC.App
 
         private static void InheritanceExample()
         {
+            int i = 'C';
             LivingThings l1 = new LivingThings();
-            Animal a1 = new Animal();
-            Plant p1 = new Plant();
+            LivingThings a1 = new Animal();
+            LivingThings p1 = new Plant();
 
             l1.Eat();
             a1.Eat();

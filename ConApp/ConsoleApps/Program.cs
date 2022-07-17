@@ -15,4 +15,14 @@ namespace ConsoleApps
 
         //todo  to be done by chandan
     }
+
+    public interface IAbc
+    {
+        int I { get; set; }
+
+        public void Add(int a, int b)
+        {
+            Console.WriteLine(a + b);
+        }
+    }
 }
