@@ -28,11 +28,80 @@ namespace ABC.App
                 //FunctionExample();
                 //StaticAndNonStaticExample();
                 //ArrayExample();
-                InheritanceExample();
+                //InheritanceExample();
+                //WithoutUsingInterfaceExample();
+                UsingInterfaceExample();
 
                 Console.WriteLine("Do you want to continue more?(y/n)");
                 res = Console.ReadLine();
             } while (res == "y");
+        }
+
+        private static void AbstractExample()
+        {
+            ClassOne co = new ClassOne();
+            AbstractClass abs = co;
+
+            ShapeAbs ah = new SquareAbs();
+        }
+
+        private static void UsingInterfaceExample()
+        {
+            Console.WriteLine("Press 1 for square, 2 for rectangle");
+            var choice = Convert.ToInt32(Console.ReadLine());
+            var shape = getShape(choice);
+            if (shape != null)
+            {
+                shape.GetInput();
+                shape.Perimeter();
+                shape.Area();
+            }
+            else
+            {
+                Console.WriteLine("invalid choice");
+            }
+        }
+
+        private static IShape getShape(int choice)
+        {
+            switch (choice)
+            {
+                case 1:
+                    return new Square();
+
+                case 2:
+                    return new Rectangle();
+
+                case 3:
+                    return new Circle();
+
+                default:
+                    return null;
+            }
+        }
+
+        private static void WithoutUsingInterfaceExample()
+        {
+            Console.WriteLine("Press 1 for square, 2 for rectangle");
+            var choice = Console.ReadLine();
+            if (choice == "1")
+            {
+                Square sq = new Square();
+                sq.GetInput();
+                sq.Perimeter();
+                sq.Area();
+            }
+            else if (choice == "2")
+            {
+                Rectangle rt = new Rectangle();
+                rt.GetInput();
+                rt.Perimeter();
+                rt.Area();
+            }
+            else
+            {
+                Console.WriteLine("Invalid choice");
+            }
         }
 
         private static void InheritanceExample()

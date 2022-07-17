@@ -1,4 +1,6 @@
-﻿namespace ConsoleApp6
+﻿using System;
+
+namespace ConsoleApp6
 {
     //interface : contract / like specification
     public interface IAbc
@@ -33,16 +35,24 @@
 
     public class Square : IShape
     {
+        private double length;
+
         public void Area()
         {
+            var area = Math.Pow(length, 2);
+            Console.WriteLine($"Area = {area}");
         }
 
         public void Perimeter()
         {
+            var perimeter = 4 * length;
+            Console.WriteLine($"Perimeter = {perimeter}");
         }
 
         public void GetInput()
         {
+            Console.WriteLine("Enter the length");
+            length = Convert.ToDouble(Console.ReadLine());
         }
 
         public void FunctionOne()
@@ -56,19 +66,27 @@
 
     public class Rectangle : IShape
     {
+        private double length;
+        private double breadth;
+
         public void Area()
         {
-            throw new System.NotImplementedException();
+            var area = length * breadth;
+            Console.WriteLine($"Area = {area}");
         }
 
         public void GetInput()
         {
-            throw new System.NotImplementedException();
+            Console.WriteLine("Enter the length");
+            length = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Enter the breadth");
+            breadth = Convert.ToDouble(Console.ReadLine());
         }
 
         public void Perimeter()
         {
-            throw new System.NotImplementedException();
+            var perimeter = 2 * (length + breadth);
+            Console.WriteLine($"Perimeter = {perimeter}");
         }
 
         public void FunctionThree()
@@ -76,6 +94,21 @@
         }
 
         private void FunctionFour()
+        {
+        }
+    }
+
+    public class Circle : IShape
+    {
+        public void Area()
+        {
+        }
+
+        public void GetInput()
+        {
+        }
+
+        public void Perimeter()
         {
         }
     }
