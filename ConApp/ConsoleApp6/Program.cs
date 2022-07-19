@@ -1,5 +1,6 @@
 ﻿using ConsoleApp6;
 using System;
+using System.Collections.Generic;
 using System.Text;
 
 namespace ABC.App
@@ -35,6 +36,29 @@ namespace ABC.App
                 Console.WriteLine("Do you want to continue more?(y/n)");
                 res = Console.ReadLine();
             } while (res == "y");
+        }
+
+        private static void GenericCollections()
+        {
+            List<int> list = new List<int>();
+            List<string> listStr = new List<string>();
+            list.Add(12);
+            // list.Add("");
+
+            listStr.Add("abc");
+            // listStr.Add(12);
+        }
+
+        private static void GenericExample()
+        {
+            FirstClass fc = new FirstClass();
+            SecondClass sc = new SecondClass();
+            ThirdClass tc = new ThirdClass();
+
+            var gc = new GenericClass<Human, Square>();
+
+            var ng = new NonGenericClass();
+            ng.FunctionOne<string, int>("", 12, "");
         }
 
         private static void AbstractExample()

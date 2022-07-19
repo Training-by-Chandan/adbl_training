@@ -16,4 +16,8 @@
             System.Console.WriteLine("animal can eat");
         }
     }
+
+    public class Human : Animal
+    {
+    }
 }

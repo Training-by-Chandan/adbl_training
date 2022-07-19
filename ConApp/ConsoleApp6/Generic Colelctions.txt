@@ -1,0 +1,87 @@
+﻿Microsoft (R) Visual C# Interactive Compiler version 4.2.0-4.22281.5 ()
+Loading context from 'CSharpInteractive.rsp'.
+Type "#help" for more information.
+
+
+> using System.Collections.Generic
+.     ;
+> List<int> list = new List<int>();
+> list.Add(1);
+> list
+List<int>(1) { 1 }
+> list.Add(20);
+> list
+List<int>(2) { 1, 20 }
+> list.Add(12);
+> list.Add(16);
+> list
+List<int>(4) { 1, 20, 12, 16 }
+> list.Add("abc")
+(1,10): error CS1503: Argument 1: cannot convert from 'string' to 'int'
+> list.Clear();
+> list
+List<int>(0) { }
+> list.Add(10)
+> list.Add(45);
+> list.Add(34)
+> list.Add(98)
+> list
+List<int>(4) { 10, 45, 34, 98 }
+> list.ToArray()
+int[4] { 10, 45, 34, 98 }
+> list.Remove(34)
+true
+> list.Remove(34)
+false
+> list
+List<int>(3) { 10, 45, 98 }
+> 
+> list.Contains(45)
+true
+> list.Contains(34)
+false
+> list.Sort()
+> list
+List<int>(3) { 10, 45, 98 }
+> list.Add(12)
+> list
+List<int>(4) { 10, 45, 98, 12 }
+> list.Sort()
+> list
+List<int>(4) { 10, 12, 45, 98 }
+> list.Reverse()
+> list
+List<int>(4) { 98, 45, 12, 10 }
+> 
+> 
+> 
+
+
+
+> //dictionary
+> Dictionary<string, string> dict = new Dictionary<string, string>();
+> dict.Add("1","Sunday")
+> dict.Add("2","Monday")
+> dict.Add("1","Tuesday")
+System.ArgumentException: An item with the same key has already been added.
+  + System.ThrowHelper.ThrowArgumentException(System.ExceptionResource)
+  + Dictionary<TKey, TValue>.Insert(TKey, TValue, bool)
+> dict.Add("0","Sunday")
+> dict
+Dictionary<string, string>(3) { { "1", "Sunday" }, { "2", "Monday" }, { "0", "Sunday" } }
+> dict["0"]
+"Sunday"
+> dict["2"]
+"Monday"
+> dict["3"]
+System.Collections.Generic.KeyNotFoundException: The given key was not present in the dictionary.
+  + System.ThrowHelper.ThrowKeyNotFoundException()
+  + Dictionary<TKey, TValue>.get_Item(TKey)
+> dict.Add("3","Tuesday")
+> dict["3"]
+"Tuesday"
+> 
+> 
+> Dictionary<int, string> dict2 = new Dictionary<int, string>();
+> dict2.Add(1,"Sunday")
+> 

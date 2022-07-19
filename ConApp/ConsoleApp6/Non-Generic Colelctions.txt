@@ -1,0 +1,17 @@
+﻿> #reset 64
+Resetting execution engine.
+Loading context from 'CSharpInteractive.rsp'.
+> using System.Collections;
+> 
+> ArrayList al = new ArrayList();
+> al.Add(1)
+0
+> al.Add("abc")
+1
+> al
+ArrayList(2) { 1, "abc" }
+> al.Add(new Object())
+2
+> al
+ArrayList(3) { 1, "abc", object { } }
+> 
