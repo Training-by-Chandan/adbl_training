@@ -91,3 +91,52 @@ Enumerable.WhereSelectListIterator<string, string> { "Jan", "Feb", "Mar", "Apr",
 > months.Select(m=> new { Name=m, Abbr=m.Substring(0,3), Length=m.Length}).ToList()
 List<<>f__AnonymousType0#17<string, string, int>>(12) { \{ Name = "January", Abbr = "Jan", Length = 7 }, \{ Name = "February", Abbr = "Feb", Length = 8 }, \{ Name = "March", Abbr = "Mar", Length = 5 }, \{ Name = "April", Abbr = "Apr", Length = 5 }, \{ Name = "May", Abbr = "May", Length = 3 }, \{ Name = "June", Abbr = "Jun", Length = 4 }, \{ Name = "July", Abbr = "Jul", Length = 4 }, \{ Name = "August", Abbr = "Aug", Length = 6 }, \{ Name = "September", Abbr = "Sep", Length = 9 }, \{ Name = "October", Abbr = "Oct", Length = 7 }, \{ Name = "November", Abbr = "Nov", Length = 8 }, \{ Name = "December", Abbr = "Dec", Length = 8 } }
 > 
+
+
+
+//IEnumerable vs List 
+> #reset 64
+Resetting execution engine.
+Loading context from 'CSharpInteractive.rsp'.
+
+> var names = new List<string> { "mercedes", "mazda", "bmw", "fiat", "ferrari" };
+. 
+
+> names
+List<string>(5) { "mercedes", "mazda", "bmw", "fiat", "ferrari" }
+
+> var name1 = (from n in names where n.StartsWith("m") select n)
+.     ;
+
+> name1
+Enumerable.WhereListIterator<string> { "mercedes", "mazda" }
+
+> names[0] = "toyota";
+
+> name1
+Enumerable.WhereListIterator<string> { "mazda" }
+
+> names
+List<string>(5) { "toyota", "mazda", "bmw", "fiat", "ferrari" }
+
+> names[0] = "mercedes";
+
+> name1
+Enumerable.WhereListIterator<string> { "mercedes", "mazda" }
+
+> var name2 = (from n in names where n.StartsWith("m") select n).ToList();
+
+> name2
+List<string>(2) { "mercedes", "mazda" }
+
+> names[0]="toyota"
+"toyota"
+
+> name1
+Enumerable.WhereListIterator<string> { "mazda" }
+
+> name2
+List<string>(2) { "mercedes", "mazda" }
+
+> (from n in names orderby n select n)
+OrderedEnumerable<string, string> { "bmw", "ferrari", "fiat", "mazda", "toyota" }
