@@ -31,11 +31,18 @@ namespace ABC.App
                 //ArrayExample();
                 //InheritanceExample();
                 //WithoutUsingInterfaceExample();
-                UsingInterfaceExample();
+                //UsingInterfaceExample();
+                DelegateExample();
 
                 Console.WriteLine("Do you want to continue more?(y/n)");
                 res = Console.ReadLine();
             } while (res == "y");
+        }
+
+        private static void DelegateExample()
+        {
+            Delegates dg = new Delegates();
+            dg.Run();
         }
 
         private static void GenericCollections()
