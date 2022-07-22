@@ -32,11 +32,18 @@ namespace ABC.App
                 //InheritanceExample();
                 //WithoutUsingInterfaceExample();
                 //UsingInterfaceExample();
-                DelegateExample();
+                //DelegateExample();
+                ParallelProgrammingExample();
 
                 Console.WriteLine("Do you want to continue more?(y/n)");
                 res = Console.ReadLine();
             } while (res == "y");
+        }
+
+        private static void ParallelProgrammingExample()
+        {
+            ParallelProgramming pp = new ParallelProgramming();
+            pp.Run();
         }
 
         private static void DelegateExample()
