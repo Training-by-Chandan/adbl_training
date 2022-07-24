@@ -33,11 +33,83 @@ namespace ABC.App
                 //WithoutUsingInterfaceExample();
                 //UsingInterfaceExample();
                 //DelegateExample();
-                ParallelProgrammingExample();
+                //ParallelProgrammingExample();
+                ExceptionHandlingExample();
 
                 Console.WriteLine("Do you want to continue more?(y/n)");
                 res = Console.ReadLine();
             } while (res == "y");
+        }
+
+        private static void ExceptionHandlingExample()
+        {
+            try
+            {
+                ExceptionsHandle.FunctionOne();
+                //ExceptionGenerate();
+                Console.WriteLine("Everything looks good with no error");
+            }
+            //catch (Number5Exception ex)
+            //{
+            //    //write this log in a file
+            //}
+            //catch (IndexOutOfRangeException ex)
+            //{
+            //    //write code to have the log in database
+            //    Console.WriteLine("Index is out of range");
+            //}
+            //catch (FormatException ex)
+            //{
+            //    Console.WriteLine("Format error");
+            //}
+            catch (Exception ex)
+            {
+                //send this error to the developers via mail
+                Console.WriteLine($"Type of Error : {ex.GetType()}");
+                Console.WriteLine(ex.Message);
+                Console.WriteLine("------------------------------");
+                Console.WriteLine(ex.StackTrace);
+            }
+            finally
+            {
+                Console.WriteLine("Finally everything stelled down");
+            }
+        }
+
+        private static void ExceptionGenerate()
+        {
+            try
+            {
+                Console.WriteLine("Enter the first number");
+                try
+                {
+                }
+                catch (Exception)
+                {
+                    SendEmail();
+                }
+                var num = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Enter the second number");
+                var num2 = Convert.ToInt32(Console.ReadLine());
+
+                try
+                {
+                    int[] arr = new int[num];
+                    arr[10] = num2;
+                }
+                catch (Exception)
+                {
+                    SendEmail();
+                }
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private static void SendEmail()
+        {
+            //write this to file
         }
 
         private static void ParallelProgrammingExample()
