@@ -1,0 +1,219 @@
+﻿Microsoft (R) Visual C# Interactive Compiler version 4.2.0-4.22281.5 ()
+Loading context from 'CSharpInteractive.rsp'.
+Type "#help" for more information.
+
+> //path
+
+> using System.IO;
+
+
+> string path = "D:\\Projects\\Broadway\\adbl_training\\ConApp\\ConsoleApp6\\abc.txt";
+
+
+> path
+"D:\\Projects\\Broadway\\adbl_training\\ConApp\\ConsoleApp6\\abc.txt"
+
+
+> Path.ChangeExtension(path, ".doc");
+
+
+> Path.ChangeExtension(path, ".doc")
+"D:\\Projects\\Broadway\\adbl_training\\ConApp\\ConsoleApp6\\abc.doc"
+
+
+> Path.GetDirectoryName(path)
+"D:\\Projects\\Broadway\\adbl_training\\ConApp\\ConsoleApp6"
+
+
+> Path.GetExtension(path)
+".txt"
+
+
+> Path.GetFileName(path)
+"abc.txt"
+
+
+> Path.GetFileNameWithoutExtension(path)
+"abc"
+
+> Path.GetInvalidFileNameChars()
+char[41] { '"', '<', '>', '|', '\0', '\u0001', '\u0002', '\u0003', '\u0004', '\u0005', '\u0006', '\a', '\b', '\t', '\n', '\v', '\f', '\r', '\u000e', '\u000f', '\u0010', '\u0011', '\u0012', '\u0013', '\u0014', '\u0015', '\u0016', '\u0017', '\u0018', '\u0019', '\u001a', '\u001b', '\u001c', '\u001d', '\u001e', '\u001f', ':', '*', '?', '\\', '/' }
+
+> Path.GetInvalidPathChars()
+char[36] { '"', '<', '>', '|', '\0', '\u0001', '\u0002', '\u0003', '\u0004', '\u0005', '\u0006', '\a', '\b', '\t', '\n', '\v', '\f', '\r', '\u000e', '\u000f', '\u0010', '\u0011', '\u0012', '\u0013', '\u0014', '\u0015', '\u0016', '\u0017', '\u0018', '\u0019', '\u001a', '\u001b', '\u001c', '\u001d', '\u001e', '\u001f' }
+
+> Path.GetRandomFileName()
+"meao0xb1.itg"
+
+> Path.GetRandomFileName()
+"mqi1plaf.455"
+
+> Path.GetTempFileName()
+"C:\\Users\\Chand\\AppData\\Local\\Temp\\tmp91AA.tmp"
+
+> Path.GetTempFileName()
+"C:\\Users\\Chand\\AppData\\Local\\Temp\\tmp2484.tmp"
+
+> Path.GetTempPath()
+"C:\\Users\\Chand\\AppData\\Local\\Temp\\"
+
+> Path.GetPathRoot()
+(1,6): error CS7036: There is no argument given that corresponds to the required formal parameter 'path' of 'Path.GetPathRoot(string)'
+
+> Path.GetPathRoot(path)
+"D:\\"
+
+> Path.GetPathRoot("C:\\Users\\Chand\\AppData\\Local\\Temp\\")
+"C:\\"
+
+> Path.Combine("D:\\TestFile","abc","xyz","test","fileOne.txt")
+"D:\\TestFile\\abc\\xyz\\test\\fileOne.txt"
+
+> path
+"D:\\Projects\\Broadway\\adbl_training\\ConApp\\ConsoleApp6\\abc.txt"
+
+> path= Path.ChangeExtension(path, ".doc")
+"D:\\Projects\\Broadway\\adbl_training\\ConApp\\ConsoleApp6\\abc.doc"
+
+> path
+"D:\\Projects\\Broadway\\adbl_training\\ConApp\\ConsoleApp6\\abc.doc"
+
+> var newpath = Path.ChangeExtension(path, ".xls")
+.     ;
+
+> newpath
+"D:\\Projects\\Broadway\\adbl_training\\ConApp\\ConsoleApp6\\abc.xls"
+
+> Guid.NewGuid()
+[3662d173-d707-47fd-b806-e8df82d5b7b9]
+
+> Guid.NewGuid()
+[15b3200d-3eea-41c3-a0f8-24ea2328df31]
+
+> Guid.NewGuid()
+[661451c4-6f25-427d-a30e-68134a402ec0]
+
+> Guid.NewGuid()
+[496f72df-9483-4983-b561-2c44047c8c8f]
+
+> Guid.NewGuid()
+[8b7ed62c-a918-4052-8edc-0b1b88a8078a]
+
+> var path = "D:\\Projects\\Broadway\\adbl_training\\ConApp\\ConsoleApp6";
+
+> path
+"D:\\Projects\\Broadway\\adbl_training\\ConApp\\ConsoleApp6"
+
+> var filename = Guid.NewGuid().ToString();
+
+> filename
+"64fea8d9-c17b-4023-94b5-6881ca270211"
+
+> var extension = Path.GetExtension("1.jpg");
+
+> var completePath = Path.Combine(path, filename, extension);
+
+> completePath
+"D:\\Projects\\Broadway\\adbl_training\\ConApp\\ConsoleApp6\\64fea8d9-c17b-4023-94b5-6881ca270211\\.jpg"
+
+> var completePath = Path.Combine(path, filename + extension);
+
+> completePath
+"D:\\Projects\\Broadway\\adbl_training\\ConApp\\ConsoleApp6\\64fea8d9-c17b-4023-94b5-6881ca270211.jpg"
+
+> 
+
+> 
+
+> 
+
+> //Directory Manipulations
+
+> Directory.CreateDirectory("D:\\TestPath\\abc\\xyz")
+[xyz]
+
+> Directory.CreateDirectory("D:\\TestPath\\xyz")
+[xyz]
+
+> Directory.Delete("D:\\TestPath\\abc\\xyz")
+
+> Directory.Delete("D:\\TestPath\\xyz")
+System.IO.IOException: The directory is not empty.
+
+  + System.IO.__Error.WinIOError(int, string)
+  + System.IO.Directory.DeleteHelper(string, string, bool, bool, ref Microsoft.Win32.Win32Native.WIN32_FIND_DATA)
+  + System.IO.Directory.Delete(string, string, bool, bool)
+
+> Directory.Delete("D:\\TestPath\\xyz",true)
+
+> Directory.EnumerateDirectories("D:\\TestPath")
+FileSystemEnumerableIterator<string> { "D:\\TestPath\\abc", "D:\\TestPath\\abc - Copy", "D:\\TestPath\\abc - Copy (2)", "D:\\TestPath\\abc - Copy (3)", "D:\\TestPath\\abc - Copy (4)" }
+
+> Directory.EnumerateFiles()
+(1,11): error CS1501: No overload for method 'EnumerateFiles' takes 0 arguments
+
+> Directory.EnumerateFiles("D:\\TestPath")
+FileSystemEnumerableIterator<string> { "D:\\TestPath\\txt - Copy (2).txt", "D:\\TestPath\\txt - Copy (3).txt", "D:\\TestPath\\txt - Copy (4).txt", "D:\\TestPath\\txt - Copy (5).txt", "D:\\TestPath\\txt - Copy (6).txt", "D:\\TestPath\\txt - Copy (7).txt", "D:\\TestPath\\txt - Copy (8).txt", "D:\\TestPath\\txt - Copy (9).txt", "D:\\TestPath\\txt - Copy.txt", "D:\\TestPath\\txt.txt" }
+
+> Directory.Exists("D:\\TestPath\\abc")
+true
+
+> Directory.Exists("D:\\TestPath\\a")
+false
+
+> Directory.GetFiles("D:\\TestPath")
+string[10] { "D:\\TestPath\\txt - Copy (2).txt", "D:\\TestPath\\txt - Copy (3).txt", "D:\\TestPath\\txt - Copy (4).txt", "D:\\TestPath\\txt - Copy (5).txt", "D:\\TestPath\\txt - Copy (6).txt", "D:\\TestPath\\txt - Copy (7).txt", "D:\\TestPath\\txt - Copy (8).txt", "D:\\TestPath\\txt - Copy (9).txt", "D:\\TestPath\\txt - Copy.txt", "D:\\TestPath\\txt.txt" }
+
+> Directory.GetLastAccessTime("D:\\TestPath")
+[25/07/2022 20:51:46]
+
+> Directory.GetCreationTime("D:\\TestPath")
+[25/07/2022 20:16:27]
+
+> Directory.GetParent("D:\\TestPath\\abc")
+[D:\TestPath]
+
+> 
+
+> 
+
+> 
+
+> 
+
+> //file
+
+> List<string> str = new List<string>() { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
+
+> str
+List<string>(12) { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" }
+
+> File.AppendAllLines("D:\\TestPath\\month.txt",str)
+
+> File.AppendAllLines("D:\\TestPath\\month.txt",str)
+
+> File.WriteAllLines("D:\\TestPath\\month.txt",str)
+
+> File.AppendAllText("D:\\TestPath\\month.txt","This is new content that needs to be appended")
+
+> File.Copy("D:\\TestPath\\month.txt","D:\\TestPath\\abc\\abc.txt")
+
+> File.Copy("D:\\TestPath\\month.txt","D:\\TestPath\\xyz\\abc.txt")
+System.IO.DirectoryNotFoundException: Could not find a part of the path 'D:\TestPath\xyz\abc.txt'.
+  + System.IO.__Error.WinIOError(int, string)
+  + System.IO.File.InternalCopy(string, string, bool, bool)
+
+> File.Delete("D:\\TestPath\\abc\\abc.txt")
+
+> File.Create("D:\\TestPath\\abc\\abc.txt")
+FileStream { CanRead=true, CanRead=true, CanSeek=true, CanSeek=true, CanTimeout=false, CanWrite=true, CanWrite=true, Handle=[3164], IsAsync=false, Length=0, Length=0, Name="D:\\TestPath\\abc\\abc.txt", Position=0, Position=0, ReadTimeout=!<InvalidOperationException>, SafeFileHandle=SafeFileHandle { handle=[3164], IsClosed=false, IsInvalid=false, IsInvalid=false }, WriteTimeout=!<InvalidOperationException> }
+
+> var fs = File.Create("D:\\TestPath\\abc\\xyx.txt");
+
+> File.ReadAllText("D:\\TestPath\\month.txt")
+"January\r\nFebruary\r\nMarch\r\nApril\r\nMay\r\nJune\r\nJuly\r\nAugust\r\nSeptember\r\nOctober\r\nNovember\r\nDecember\r\nThis is new content that needs to be appended"
+
+> File.ReadAllLines("D:\\TestPath\\month.txt")
+string[13] { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December", "This is new content that needs to be appended" }
+
+> 
