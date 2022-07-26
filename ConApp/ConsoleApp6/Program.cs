@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.IO;
 
 namespace ABC.App
 {
@@ -34,11 +35,65 @@ namespace ABC.App
                 //UsingInterfaceExample();
                 //DelegateExample();
                 //ParallelProgrammingExample();
-                ExceptionHandlingExample();
+                //ExceptionHandlingExample();
+                //StreamExample();
+                EnumsExample();
 
                 Console.WriteLine("Do you want to continue more?(y/n)");
                 res = Console.ReadLine();
             } while (res == "y");
+        }
+
+        private static void EnumsExample()
+        {
+            var today = Days.Monday;
+            Console.WriteLine($"String Equivalent : {today.ToString()}");
+            Console.WriteLine($"Int Equivalent : {(int)today}");
+
+            switch (today)
+            {
+                case Days.Monday:
+                    break;
+
+                case Days.Sunday:
+                    break;
+
+                case Days.Tuesday:
+                    break;
+
+                case Days.Wednesday:
+                    break;
+
+                case Days.Thursday:
+                    break;
+
+                case Days.Friday:
+                    break;
+
+                case Days.Saturday:
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
+        private static void StreamExample()
+        {
+            var file = "D:\\TestPath\\newfile.txt";
+
+            string str = "Hello from ADBL Batch";
+            byte[] arr = Encoding.ASCII.GetBytes(str);
+            using (var fs = File.Create(file)) // using should be used only with IDisposable
+            {
+                fs.Write(arr, 0, arr.Length);
+            }
+
+            using (var obj = new FirstClass())
+            {
+                obj.VariableOne = "";
+                obj.VariableTwo = "";
+            }
         }
 
         private static void ExceptionHandlingExample()

@@ -2,10 +2,14 @@
 
 namespace ConsoleApp6
 {
-    public class FirstClass
+    public class FirstClass : IDisposable
     {
         public string VariableOne { get; set; }
         public string VariableTwo { get; set; }
+
+        public void Dispose()
+        {
+        }
     }
 
     public class SecondClass
