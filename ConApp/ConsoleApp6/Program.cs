@@ -1,8 +1,10 @@
 ﻿using ConsoleApp6;
 using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.Text;
 using System.IO;
+using System.Security.Cryptography;
 
 namespace ABC.App
 {
@@ -37,11 +39,74 @@ namespace ABC.App
                 //ParallelProgrammingExample();
                 //ExceptionHandlingExample();
                 //StreamExample();
-                EnumsExample();
+                //EnumsExample();
+                //StackImplementation();
+                //QueueImplementation();
+                LinkedListImplementation();
 
                 Console.WriteLine("Do you want to continue more?(y/n)");
                 res = Console.ReadLine();
             } while (res == "y");
+        }
+
+        private static void RegularExpressions()
+        {
+            //string pattern match
+            //abc@abc.com
+            string email = "abc@abc.com";
+            string str = "facebook.com";
+        }
+
+        private static void LinkedListImplementation()
+        {
+            LinkedList<string> linkedList = new LinkedList<string>();
+            var first = linkedList.AddFirst("First");
+            var last = linkedList.AddLast("Last");
+            var second = linkedList.AddAfter(first, "Second");
+            var third = linkedList.AddAfter(second, "Third");
+            var fs = linkedList.AddAfter(first, "FirstSecond");
+        }
+
+        private static void QueueImplementation()
+        {
+            Queue<string> queue = new Queue<string>();
+            queue.Enqueue("Amin Duwal");
+            queue.Enqueue("Krishna Prasad Nepal");
+            queue.Dequeue();
+            queue.Enqueue("Rupa Shrestha");
+            queue.Enqueue("Shanti Rijal");
+            queue.Enqueue("Shrijana Paudel");
+            queue.Dequeue();
+            queue.Dequeue();
+            queue.Enqueue("Chandan Bhagat");
+        }
+
+        private static void StackImplementation()
+        {
+            Stack stack = new Stack();
+            stack.Push("Book One");
+            stack.Push("Book Two");
+            stack.Pop();
+            stack.Push("Book Three");
+            stack.Push("Book Four");
+            stack.Push("Book Five");
+            stack.Pop();
+
+            CustomStack cs = new CustomStack();
+            cs.Push("Book One");
+            cs.Push("Book Two");
+            cs.Pop();
+            cs.Push("Book Three");
+            cs.Push("Book Four");
+            cs.Push("Book Five");
+            cs.Pop();
+
+            Stack<int> stackInt = new Stack<int>();
+            stackInt.Push(1);
+            stackInt.Push(12);
+
+            Stack<char> stackChar = new Stack<char>();
+            stackChar.Push('C');
         }
 
         private static void EnumsExample()
