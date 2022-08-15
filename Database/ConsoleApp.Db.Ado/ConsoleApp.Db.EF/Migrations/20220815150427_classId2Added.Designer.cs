@@ -4,6 +4,7 @@ using ConsoleApp.Db.EF;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ConsoleApp.Db.EF.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    partial class DatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20220815150427_classId2Added")]
+    partial class classId2Added
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -57,11 +59,8 @@ namespace ConsoleApp.Db.EF.Migrations
                     b.Property<int?>("ClassId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("ClassId2")
+                    b.Property<int>("ClassId2")
                         .HasColumnType("int");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
 
                     b.Property<string>("Email")
                         .HasMaxLength(100)
@@ -81,8 +80,6 @@ namespace ConsoleApp.Db.EF.Migrations
 
                     b.HasIndex("ClassId");
 
-                    b.HasIndex("ClassId2");
-
                     b.ToTable("Students");
                 });
 
@@ -92,13 +89,7 @@ namespace ConsoleApp.Db.EF.Migrations
                         .WithMany()
                         .HasForeignKey("ClassId");
 
-                    b.HasOne("ConsoleApp.Db.EF.Classes", "ClassItem2")
-                        .WithMany()
-                        .HasForeignKey("ClassId2");
-
                     b.Navigation("ClassItem");
-
-                    b.Navigation("ClassItem2");
                 });
 #pragma warning restore 612, 618
         }

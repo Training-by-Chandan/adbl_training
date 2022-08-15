@@ -22,19 +22,19 @@
             switch (choice)
             {
                 case 1:
-                   
+                    StudentOps.ReadAll();
                     break;
                 case 2:
-                   
+                    StudentOps.ReadById();
                     break;
                 case 3:
-                  
+                    StudentOps.Create();
                     break;
                 case 4:
-                    
+                    StudentOps.Edit();
                     break;
                 case 5:
-                    
+                    StudentOps.Delete();
                     break;
                 default:
                     Console.WriteLine("Invalid Choice");

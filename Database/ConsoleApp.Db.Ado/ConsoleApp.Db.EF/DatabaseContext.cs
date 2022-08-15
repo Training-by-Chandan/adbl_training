@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ConsoleApp.Db.EF
 {
@@ -22,6 +23,17 @@ namespace ConsoleApp.Db.EF
         public string LastName { get; set; }
         [StringLength(100)]
         public string? Email { get; set; }
+        public string Active { get; set; }
+        public int? ClassId { get; set; }
+        
+        [ForeignKey("ClassId")]
+        public virtual Classes? ClassItem { get; set; }
+
+        public int? ClassId2 { get; set; }
+        [ForeignKey("ClassId2")]
+        public virtual Classes? ClassItem2 { get; set; }
+
+        public DateTime CreatedDate { get; set; } = DateTime.Now;
     }
     public class Classes
     {
