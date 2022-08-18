@@ -46,6 +46,10 @@ namespace WinFormsApp.Db.CodeFirst
             txtResult.Text = res.ToString();
         }
 
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+        }
+
         private void btnOperator_Click(object sender, EventArgs e)
         {
             var btn = (Button)sender;
