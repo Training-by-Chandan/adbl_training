@@ -11,5 +11,6 @@ namespace WinFormsApp.Db.CodeFirst.Data
         }
 
         public DbSet<UserInfo> UserInfos { get; set; }
+        public DbSet<Inventory> Inventories { get; set; }
     }
 }

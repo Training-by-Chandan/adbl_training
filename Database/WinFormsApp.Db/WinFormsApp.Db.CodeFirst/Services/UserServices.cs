@@ -3,14 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WinFormsApp.Db.CodeFirst.Data;
 
 namespace WinFormsApp.Db.CodeFirst.Services
 {
-    public class UserServices
+    public class UserServices : BaseServices
     {
-        private DefaultContext db = new DefaultContext();
-
         public (bool, string, int) Login(string username, string password)
         {
             try

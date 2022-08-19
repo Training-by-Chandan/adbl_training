@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp.Db.CodeFirst.Admin;
 
 namespace WinFormsApp.Db.CodeFirst
 {
@@ -31,6 +32,13 @@ namespace WinFormsApp.Db.CodeFirst
             Form1 calculator = new Form1();
             calculator.MdiParent = this;
             calculator.Show();
+        }
+
+        private void inventoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmInventory inventory = new frmInventory();
+            inventory.MdiParent = this;
+            inventory.Show();
         }
     }
 }
