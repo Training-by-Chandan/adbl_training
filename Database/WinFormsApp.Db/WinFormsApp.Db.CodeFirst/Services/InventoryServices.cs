@@ -1,12 +1,13 @@
 ﻿using WinFormsApp.Db.CodeFirst.Models;
+using WinFormsApp.Db.CodeFirst.Models.ViewModels;
 
 namespace WinFormsApp.Db.CodeFirst.Services
 {
-    public class InventoryServices : BaseServices
+    public class InventoryServices : BaseServices<Inventory>
     {
-        public List<Inventory> GetAll()
+        public List<ComboBoxModel> GetItemsForComboBox()
         {
-            return db.Inventories.ToList();
+            return db.Inventories.Select(p => new ComboBoxModel { Key = p.Id, Value = p.Name }).ToList();
         }
 
         public List<Inventory> GetFilteredByText(string text)
@@ -15,7 +16,7 @@ namespace WinFormsApp.Db.CodeFirst.Services
         }
 
         //(bool, string) => tuples
-        public (bool, string) Create(Inventory inventory)
+        public override (bool, string) Create(Inventory inventory)
         {
             try
             {

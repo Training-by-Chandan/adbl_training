@@ -35,6 +35,7 @@ namespace WinFormsApp.Db.CodeFirst.Admin
         private void LoadData()
         {
             grdInventory.DataSource = inventoryServices.GetAll();
+            grdInventory.Columns["Id"].Visible = false;
             grdInventory.Refresh();
         }
 

@@ -40,5 +40,12 @@ namespace WinFormsApp.Db.CodeFirst
             inventory.MdiParent = this;
             inventory.Show();
         }
+
+        private void orderHistoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmOrderHistory orderHistory = new frmOrderHistory();
+            orderHistory.MdiParent = this;
+            orderHistory.Show();
+        }
     }
 }

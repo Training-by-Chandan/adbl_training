@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WinFormsApp.Db.CodeFirst.Models;
 
 namespace WinFormsApp.Db.CodeFirst.Services
 {
-    public class UserServices : BaseServices
+    public class UserServices : BaseServices<UserInfo>
     {
         public (bool, string, int) Login(string username, string password)
         {
