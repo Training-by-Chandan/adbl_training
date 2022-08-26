@@ -11,8 +11,8 @@ using WinFormsApp.Db.CodeFirst.Data;
 namespace WinFormsApp.Db.CodeFirst.Migrations
 {
     [DbContext(typeof(DefaultContext))]
-    [Migration("20220821145314_orderhistoryAdded")]
-    partial class orderhistoryAdded
+    [Migration("20220826144059_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

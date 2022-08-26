@@ -35,6 +35,8 @@
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.lblPasswordValidation = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblUsername
@@ -104,11 +106,33 @@
             this.lblPasswordValidation.Text = "label1";
             this.lblPasswordValidation.Visible = false;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(167, 179);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(122, 38);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(12, 170);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(124, 47);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(734, 260);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblPasswordValidation);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnLogin);
@@ -137,5 +161,7 @@
         private Button btnLogin;
         private Button btnClear;
         private Label lblPasswordValidation;
+        private Button button1;
+        private Button button2;
     }
 }

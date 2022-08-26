@@ -34,6 +34,11 @@
             this.btnRefresh = new System.Windows.Forms.Button();
             this.grdInventory = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblId = new System.Windows.Forms.Label();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.btnCreate = new System.Windows.Forms.Button();
             this.cmbUnits = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtQuantity = new System.Windows.Forms.TextBox();
@@ -44,8 +49,6 @@
             this.lblName = new System.Windows.Forms.Label();
             this.txtCode = new System.Windows.Forms.TextBox();
             this.lblCode = new System.Windows.Forms.Label();
-            this.btnReset = new System.Windows.Forms.Button();
-            this.btnCreate = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdInventory)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -100,9 +103,13 @@
             this.grdInventory.RowTemplate.Height = 25;
             this.grdInventory.Size = new System.Drawing.Size(733, 201);
             this.grdInventory.TabIndex = 0;
+            this.grdInventory.SelectionChanged += new System.EventHandler(this.grdInventory_SelectionChanged);
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.lblId);
+            this.groupBox2.Controls.Add(this.btnDelete);
+            this.groupBox2.Controls.Add(this.btnEdit);
             this.groupBox2.Controls.Add(this.btnReset);
             this.groupBox2.Controls.Add(this.btnCreate);
             this.groupBox2.Controls.Add(this.cmbUnits);
@@ -122,6 +129,55 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "groupBox2";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // lblId
+            // 
+            this.lblId.AutoSize = true;
+            this.lblId.Location = new System.Drawing.Point(401, 217);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(0, 25);
+            this.lblId.TabIndex = 12;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(534, 192);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(103, 50);
+            this.btnDelete.TabIndex = 11;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Visible = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(643, 192);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(103, 50);
+            this.btnEdit.TabIndex = 10;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Visible = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnReset
+            // 
+            this.btnReset.Location = new System.Drawing.Point(534, 192);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(103, 50);
+            this.btnReset.TabIndex = 5;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            // 
+            // btnCreate
+            // 
+            this.btnCreate.Location = new System.Drawing.Point(643, 192);
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Size = new System.Drawing.Size(103, 50);
+            this.btnCreate.TabIndex = 4;
+            this.btnCreate.Text = "Create";
+            this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // cmbUnits
             // 
@@ -190,6 +246,7 @@
             // 
             // txtCode
             // 
+            this.txtCode.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtCode.Location = new System.Drawing.Point(103, 41);
             this.txtCode.Name = "txtCode";
             this.txtCode.Size = new System.Drawing.Size(249, 32);
@@ -203,25 +260,6 @@
             this.lblCode.Size = new System.Drawing.Size(56, 25);
             this.lblCode.TabIndex = 0;
             this.lblCode.Text = "Code";
-            // 
-            // btnReset
-            // 
-            this.btnReset.Location = new System.Drawing.Point(534, 192);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(103, 50);
-            this.btnReset.TabIndex = 5;
-            this.btnReset.Text = "Reset";
-            this.btnReset.UseVisualStyleBackColor = true;
-            // 
-            // btnCreate
-            // 
-            this.btnCreate.Location = new System.Drawing.Point(643, 192);
-            this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(103, 50);
-            this.btnCreate.TabIndex = 4;
-            this.btnCreate.Text = "Create";
-            this.btnCreate.UseVisualStyleBackColor = true;
-            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // frmInventory
             // 
@@ -265,5 +303,8 @@
         private Label lblCode;
         private Button btnReset;
         private Button btnCreate;
+        private Button btnDelete;
+        private Button btnEdit;
+        private Label lblId;
     }
 }

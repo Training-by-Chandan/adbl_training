@@ -22,7 +22,7 @@ namespace WinFormsApp.Db.CodeFirst.Services
                 }
                 else
                 {
-                    if (existing.Password == password)
+                    if (Hasher.VerifyHashedPassword(existing.Password, password))
                     {
                         return (true, "login successful", 0);
                     }

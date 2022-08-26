@@ -51,8 +51,25 @@ namespace WinFormsApp.Db.CodeFirst
                 else
                 {
                     MessageBox.Show(res.Item2);
-
                 }
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            txtUsername.Text = Hasher.HashPassword(txtPassword.Text);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string str = txtUsername.Text;
+            if (Hasher.VerifyHashedPassword(str, txtPassword.Text))
+            {
+                MessageBox.Show("Matched");
+            }
+            else
+            {
+                MessageBox.Show("Not matched");
             }
         }
     }

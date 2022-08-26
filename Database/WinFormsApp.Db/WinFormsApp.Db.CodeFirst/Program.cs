@@ -15,6 +15,7 @@ namespace WinFormsApp.Db.CodeFirst
             ApplicationConfiguration.Initialize();
 #if DEBUG
             Application.Run(new MainForm());
+            //Application.Run(login);
 #else
             Application.Run(login);
 #endif

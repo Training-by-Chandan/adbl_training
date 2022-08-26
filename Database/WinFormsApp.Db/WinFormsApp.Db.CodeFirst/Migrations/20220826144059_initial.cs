@@ -4,10 +4,41 @@
 
 namespace WinFormsApp.Db.CodeFirst.Migrations
 {
-    public partial class orderhistoryAdded : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "InventoryInfo",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CodeName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Price = table.Column<double>(type: "float", nullable: false),
+                    Quantity = table.Column<double>(type: "float", nullable: false),
+                    Units = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_InventoryInfo", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "UserInfos",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Username = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Password = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_UserInfos", x => x.Id);
+                });
+
             migrationBuilder.CreateTable(
                 name: "OrderHistories",
                 columns: table => new
@@ -41,6 +72,12 @@ namespace WinFormsApp.Db.CodeFirst.Migrations
         {
             migrationBuilder.DropTable(
                 name: "OrderHistories");
+
+            migrationBuilder.DropTable(
+                name: "UserInfos");
+
+            migrationBuilder.DropTable(
+                name: "InventoryInfo");
         }
     }
 }

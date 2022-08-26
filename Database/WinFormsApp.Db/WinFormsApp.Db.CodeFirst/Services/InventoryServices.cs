@@ -37,5 +37,53 @@ namespace WinFormsApp.Db.CodeFirst.Services
                 return (false, ex.Message);
             }
         }
+
+        public (bool, string) Edit(Inventory inventory)
+        {
+            try
+            {
+                var existing = db.Inventories.Find(inventory.Id);
+                if (existing == null)
+                {
+                    return (false, "Record not found");
+                }
+                existing.Quantity = inventory.Quantity;
+                existing.Units = inventory.Units;
+                existing.Price = inventory.Price;
+                existing.Code = inventory.Code;
+                existing.Name = inventory.Name;
+                //above can be optimized by using automapper which we will be learning in ASP.NET Core
+
+                db.Inventories.Update(existing);
+                db.SaveChanges();
+
+                return (true, "updated sucessful");
+            }
+            catch (Exception ex)
+            {
+                return (false, ex.Message);
+            }
+        }
+
+        public (bool, string) Delete(int id)
+        {
+            try
+            {
+                var existing = db.Inventories.Find(id);
+                if (existing == null)
+                {
+                    return (false, "Record not found");
+                }
+
+                db.Inventories.Remove(existing);
+                db.SaveChanges();
+
+                return (true, "deleted sucessful");
+            }
+            catch (Exception ex)
+            {
+                return (false, ex.Message);
+            }
+        }
     }
 }

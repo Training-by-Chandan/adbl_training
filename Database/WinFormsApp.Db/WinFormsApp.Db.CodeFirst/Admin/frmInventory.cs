@@ -92,5 +92,85 @@ namespace WinFormsApp.Db.CodeFirst.Admin
                 MessageBox.Show(res.Item2);
             }
         }
+
+        private void clearTextFields()
+        {
+            txtCode.Clear();
+            txtName.Clear();
+            txtPrice.Clear();
+            txtQuantity.Clear();
+            cmbUnits.SelectedIndex = -1;
+            lblId.Text = "";
+        }
+
+        private void grdInventory_SelectionChanged(object sender, EventArgs e)
+        {
+            var rows = grdInventory.SelectedRows;
+            if (rows.Count > 0)
+            {
+                //we know that the rows are selected (multiple rows)
+                var row = rows[0];
+                lblId.Text = row.Cells["Id"].Value.ToString();
+                txtCode.Text = row.Cells["Code"].Value.ToString();
+                txtName.Text = row.Cells["Name"].Value.ToString();
+                txtPrice.Text = row.Cells["Price"].Value.ToString();
+                txtQuantity.Text = row.Cells["Quantity"].Value.ToString();
+                cmbUnits.SelectedItem = (Units)row.Cells["Units"].Value;
+
+                EditMode(true);
+            }
+            else
+            {
+                //rows are not selected
+                clearTextFields();
+                EditMode(false);
+            }
+        }
+
+        private void EditMode(bool enabled)
+        {
+            btnEdit.Visible = enabled;
+            btnDelete.Visible = enabled;
+            btnCreate.Visible = !enabled;
+            btnReset.Visible = !enabled;
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            var inventory = new Inventory()
+            {
+                Id = Convert.ToInt32(lblId.Text),
+                Code = txtCode.Text,
+                Name = txtName.Text,
+                Price = Convert.ToDouble(txtPrice.Text),
+                Quantity = Convert.ToDouble(txtQuantity.Text),
+                Units = (Units)cmbUnits.SelectedItem
+            };
+            var res = inventoryServices.Edit(inventory);
+            if (res.Item1)
+            {
+                clearTextFields();
+                LoadData();
+            }
+            else
+            {
+                MessageBox.Show(res.Item2);
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            var Id = Convert.ToInt32(lblId.Text);
+            var res = inventoryServices.Delete(Id);
+            if (res.Item1)
+            {
+                clearTextFields();
+                LoadData();
+            }
+            else
+            {
+                MessageBox.Show(res.Item2);
+            }
+        }
     }
 }
